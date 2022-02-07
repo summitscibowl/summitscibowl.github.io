@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
         <div class="container-fluid">
             <a class="navbar-brand ms-3" href="/index">Summit Scibowl</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -28,22 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/classes">Classes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/signup">Sign up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/faq">Packets</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/packets">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About Us</a>
+                        <a class="nav-link active" aria-current="page" href="">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -51,9 +36,117 @@
     </nav>
 
     <div class="container">
-        <p class="h1">Sign up</p>
+        <p class="h1 mb-3">Sign up</p>
+        <form class="needs-validation" novalidate>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Please enter your first name.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="form-group mb-3">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Please enter your last name.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                <div class="invalid-feedback">
+                    Please enter a valid email.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group mb-3">
+                        <label for="exampleFormControlInput1">Current Grade</label>
+                        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Please enter your grade.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <div class="form-group mb-3">
+                        <label for="exampleFormControlInput1">School</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Please enter your school name.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>Which classes are you signing up for?</p>
+            <div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Biology</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                    <label class="form-check-label" for="exampleCheck2">Chemistry</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck3">
+                    <label class="form-check-label" for="exampleCheck3">Earth Science</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck4">
+                    <label class="form-check-label" for="exampleCheck4">Space Science</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck5">
+                    <label class="form-check-label" for="exampleCheck5">Math</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck6">
+                    <label class="form-check-label" for="exampleCheck6">Physics</label>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="exampleFormControlTextarea1">Where did you hear about us?</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </div>
+            <div>
+                <p>Payment: You can pay through Venmo, Zelle, or Paypal.
+                    If you need an invoice, let us known and we'll send you one.
+                </p>
+            </div>
+
+            <button type="button" class="btn btn-primary mb-5">Submit</button>
+        </form>
     </div>
-      
+
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+    </script>
 
     <!-- Bootstrap: -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
