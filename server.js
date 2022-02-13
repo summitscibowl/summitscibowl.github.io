@@ -10,8 +10,6 @@ app.get('/', (req, res) => {
 });
 
 app.use((req, res) => {
-    console.log(req.url);
-
     // secure the backend code so it can't be accessed by the frontend
     if (req.url === '/server.js') {
         res.redirect('/');
