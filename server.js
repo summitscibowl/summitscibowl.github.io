@@ -13,6 +13,8 @@ app.use((req, res) => {
     // secure the backend code so it can't be accessed by the frontend
     if (req.url === '/server.js') {
         res.redirect('/');
+    } else if (req.url === '/index') {
+        res.redirect('/');
     } else if (req.url.substr(-3) === '.js') {
         res.sendFile(__dirname + '/static/' + req.url);
     } else if (req.url.substr(-4) === '.css') {
@@ -23,6 +25,14 @@ app.use((req, res) => {
         res.sendFile(__dirname + '/static/' + req.url + '.html');
     } else { // remove '.html' from the end of the url
         res.redirect(req.url.slice(0, -5));
+    }
+});
+
+app.use((err, req, res, next) => {
+    if (err.status === 404) {
+        res.sendFile(__dirname + '/static/404.html');
+    } else {
+        next(err);
     }
 });
 
