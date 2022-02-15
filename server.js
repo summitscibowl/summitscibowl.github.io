@@ -21,7 +21,7 @@ app.use((req, res) => {
         res.sendFile(__dirname + '/static/' + req.url);
     } else if (req.url.substr(-5) !== '.html') {
         res.sendFile(__dirname + '/static/' + req.url + '.html');
-    } else {
+    } else { // remove '.html' from the end of the url
         res.redirect(req.url.slice(0, -5));
     }
 });
