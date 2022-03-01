@@ -20,7 +20,7 @@ app.use((req, res) => {
     } else if (req.url.substr(-4) === '.css') {
         res.sendFile(__dirname + '/static/' + req.url);
     } else if (req.url.substr(-4) === '.png') {
-        res.sendFile(__dirname + '/static/' + req.url);
+        res.sendFile(__dirname + '/static/images/' + req.url);
     } else if (req.url.substr(-5) !== '.html') {
         res.sendFile(__dirname + '/static/' + req.url + '.html');
     } else { // remove '.html' from the end of the url
@@ -30,6 +30,7 @@ app.use((req, res) => {
 
 app.use((err, req, res, next) => {
     if (err.status === 404) {
+        console.log('404: count not find ' + req.url);
         res.sendFile(__dirname + '/static/404.html');
     } else {
         next(err);
