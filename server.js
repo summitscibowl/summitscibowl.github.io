@@ -30,7 +30,7 @@ app.use((req, res) => {
 
 app.use((err, req, res, next) => {
     if (err.status === 404) {
-        console.log('404: count not find ' + req.url);
+        console.log('404: could not find ' + req.url);
         res.sendFile(__dirname + '/static/404.html');
     } else {
         next(err);

@@ -33,7 +33,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link disabled" aria-current="page" href="">Sign Up</a>
+                        <a class="nav-link" aria-current="page" href="/classes">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="signup">Sign up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
                     </li>
                 </ul>
             </div>
@@ -42,11 +51,18 @@
 
     <div class="container">
         <p class="h1 mb-3">Sign up</p>
+        <div>
+            <b>Refund policy:</b> We offer a full refund up to 2 weeks before the first class.
+        </div>
+        <div>
+            Payments are due 1 week after the registration deadline.
+        </div>
+        <p></p>
         <form class="needs-validation" novalidate>
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="form-group mb-3">
-                        <label for="firstName">First Name</label>
+                        <label for="firstName">First Name *</label>
                         <input type="text" class="form-control" id="firstName" placeholder="" required>
                         <div class="invalid-feedback">
                             Please enter your first name.
@@ -55,7 +71,7 @@
                 </div>
                 <div class="col-12 col-md-8">
                     <div class="form-group mb-3">
-                        <label for="lastName">Last Name</label>
+                        <label for="lastName">Last Name *</label>
                         <input type="text" class="form-control" id="lastName" placeholder="" required>
                         <div class="invalid-feedback">
                             Please enter your last name.
@@ -63,17 +79,25 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group mb-3">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                <div class="invalid-feedback">
-                    Please enter a valid email.
+            <div class="row">
+                <div class="col-12 col-md-8">
+                    <div class="form-group mb-3">
+                        <label for="email">Email address *</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid email.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="discord">Discord</label>
+                    <input type="text" class="form-control" id="discord" placeholder="username#1234">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="form-group mb-3">
-                        <label for="exampleFormControlInput1">Current Grade</label>
+                        <label for="exampleFormControlInput1">Current Grade *</label>
                         <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="" required>
                         <div class="invalid-feedback">
                             Please enter your grade.
@@ -82,7 +106,7 @@
                 </div>
                 <div class="col-12 col-md-8">
                     <div class="form-group mb-3">
-                        <label for="exampleFormControlInput1">School</label>
+                        <label for="exampleFormControlInput1">School *</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" required>
                         <div class="invalid-feedback">
                             Please enter your school name.
@@ -90,8 +114,12 @@
                     </div>
                 </div>
             </div>
-            <p>Which classes are you signing up for?</p>
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="exampleCheck0" required>
+                <label class="form-check-label" for="exampleCheck1">I am confirming I am above the age of 13.</label>
+            </div>
             <div>
+                Which classes are you signing up for?
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Biology</label>
@@ -122,15 +150,22 @@
                 </div>
             </div>
             <div>
-                <p>Payment: You can pay through Venmo, Zelle, or Paypal.
-                    If you need an invoice, let us known and we'll send you one.
+                <p>
+                    Payment: You can pay through Venmo, Zelle, or Paypal.
+                    If you need an invoice, let us know and we'll send you one.
                 </p>
             </div>
+
+            <!-- <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck7">
+                <label class="form-check-label" for="exampleCheck4">I agree to receive promotional emails from Summit Scibowl.</label>
+            </div> -->
 
             <button type="submit" class="btn btn-primary mb-5">Submit</button>
         </form>
     </div>
 
+    <!-- https://github.com/levinunnink/html-form-to-google-sheet -->
 
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
