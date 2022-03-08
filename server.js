@@ -21,9 +21,9 @@ app.use((req, res) => {
         res.sendFile(__dirname + '/static/' + req.url);
     } else if (req.url.substr(-4) === '.png') {
         res.sendFile(__dirname + '/static/images/' + req.url);
-    } else if (req.url.substr(-5) !== '.html') {
+    } else if (req.url.substr(-5) !== '.html') { // remove '.html' from the end of the url
         res.sendFile(__dirname + '/static/' + req.url + '.html');
-    } else { // remove '.html' from the end of the url
+    } else if (!req.url.includes('?')) { 
         res.redirect(req.url.slice(0, -5));
     }
 });

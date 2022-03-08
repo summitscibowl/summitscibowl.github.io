@@ -6,13 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="logo.png" />
 
     <!-- Bootstrap: -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <!-- <link rel="icon" type="image/x-icon" href="/static/favicon.ico"> -->
     <link rel="stylesheet" href="/style.css">
 
     <title>Summit Scibowl</title>
@@ -33,16 +32,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/classes">Classes</a>
+                        <a class="nav-link" aria-current="page" href="classes">Classes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="signup">Sign up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/faq">FAQ</a>
+                        <a class="nav-link" href="faq">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About Us</a>
+                        <a class="nav-link" href="about">About Us</a>
                     </li>
                 </ul>
             </div>
@@ -54,16 +53,16 @@
         <div>
             <b>Refund policy:</b> We offer a full refund up to 2 weeks before the first class.
         </div>
-        <div>
+        <div class="mb-3">
             Payments are due 1 week after the registration deadline.
         </div>
-        <p></p>
-        <form class="needs-validation" novalidate>
+
+        <form class="needs-validation" id="form" novalidate>
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="form-group mb-3">
-                        <label for="firstName">First Name *</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="" required>
+                        <label for="first-name">First Name *</label>
+                        <input name="first-name" type="text" class="form-control" id="first-name" placeholder="" required>
                         <div class="invalid-feedback">
                             Please enter your first name.
                         </div>
@@ -71,8 +70,8 @@
                 </div>
                 <div class="col-12 col-md-8">
                     <div class="form-group mb-3">
-                        <label for="lastName">Last Name *</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" required>
+                        <label for="last-name">Last Name *</label>
+                        <input name="last-name" type="text" class="form-control" id="last-name" placeholder="" required>
                         <div class="invalid-feedback">
                             Please enter your last name.
                         </div>
@@ -83,7 +82,7 @@
                 <div class="col-12 col-md-8">
                     <div class="form-group mb-3">
                         <label for="email">Email address *</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com" required>
                         <div class="invalid-feedback">
                             Please enter a valid email.
                         </div>
@@ -91,14 +90,14 @@
                 </div>
                 <div class="col-12 col-md-4">
                     <label for="discord">Discord</label>
-                    <input type="text" class="form-control" id="discord" placeholder="username#1234">
+                    <input name="discord" type="text" class="form-control" id="discord" placeholder="username#1234">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="form-group mb-3">
-                        <label for="exampleFormControlInput1">Current Grade *</label>
-                        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="" required>
+                        <label for="current-grade">Current Grade *</label>
+                        <input name="current-grade" type="number" class="form-control" id="current-grade" placeholder="" required>
                         <div class="invalid-feedback">
                             Please enter your grade.
                         </div>
@@ -106,47 +105,49 @@
                 </div>
                 <div class="col-12 col-md-8">
                     <div class="form-group mb-3">
-                        <label for="exampleFormControlInput1">School *</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" required>
+                        <label for="school">School *</label>
+                        <input name="school" type="text" class="form-control" id="school" placeholder="" required>
                         <div class="invalid-feedback">
                             Please enter your school name.
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="form-check mb-3">
-                <input type="checkbox" class="form-check-input" id="exampleCheck0" required>
-                <label class="form-check-label" for="exampleCheck1">I am confirming I am above the age of 13.</label>
+            <div>
+                <div class="form-check mb-3">
+                    <input name="age-validation" type="checkbox" class="form-check-input" id="age-validation" required>
+                    <label class="form-check-label" for="age-validation">I am confirming I am above the age of 13.</label>
+                </div>
             </div>
             <div>
                 Which classes are you signing up for?
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Biology</label>
+                    <input name="biology" type="checkbox" class="form-check-input" id="biology">
+                    <label class="form-check-label" for="biology">Biology</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                    <label class="form-check-label" for="exampleCheck2">Chemistry</label>
+                    <input name="chemistry" type="checkbox" class="form-check-input" id="chemistry">
+                    <label class="form-check-label" for="chemistry">Chemistry</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck3">
-                    <label class="form-check-label" for="exampleCheck3">Earth Science</label>
+                    <input name="earth-science" type="checkbox" class="form-check-input" id="earth-science">
+                    <label class="form-check-label" for="earth-science">Earth Science</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck4">
-                    <label class="form-check-label" for="exampleCheck4">Space Science</label>
+                    <input name="space-science" type="checkbox" class="form-check-input" id="space-science">
+                    <label class="form-check-label" for="space-science">Space Science</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck5">
-                    <label class="form-check-label" for="exampleCheck5">Math</label>
+                    <input name="math" type="checkbox" class="form-check-input" id="math">
+                    <label class="form-check-label" for="math">Math</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck6">
-                    <label class="form-check-label" for="exampleCheck6">Physics</label>
+                    <input name="physics" type="checkbox" class="form-check-input" id="physics">
+                    <label class="form-check-label" for="physics">Physics</label>
                 </div>
                 <div class="form-group mt-3">
-                    <label for="exampleFormControlTextarea1">Where did you hear about us?</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="hear-from-where">Where did you hear about us?</label>
+                    <textarea name="hear-from-where" class="form-control" id="hear-from-where" rows="3"></textarea>
                 </div>
             </div>
             <div>
@@ -156,39 +157,12 @@
                 </p>
             </div>
 
-            <!-- <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck7">
-                <label class="form-check-label" for="exampleCheck4">I agree to receive promotional emails from Summit Scibowl.</label>
-            </div> -->
-
-            <button type="submit" class="btn btn-primary mb-5">Submit</button>
+            <button type="submit" id="submission" class="btn btn-primary mb-5">Submit</button>
         </form>
     </div>
 
-    <!-- https://github.com/levinunnink/html-form-to-google-sheet -->
-
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
-            'use strict';
-            window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-    </script>
-
-    <script src="/script.js"></script>
+    <script src="signup.js"></script>
+    <script src="script.js"></script>
 
     <!-- Bootstrap: -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
