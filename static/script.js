@@ -7,5 +7,5 @@ if (document.URL.substring(0, 39) === 'https://www.summitscibowl.herokuapp.com')
 }
 
 if (document.URL.substring(0, 7) === 'http://') {
-    window.location.href = 'https://www.summitscibowl.com' + document.URL.substring(7);
+    window.location.href = 'https://' + document.URL.substring(7);
 }
