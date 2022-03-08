@@ -19,7 +19,7 @@ app.use((req, res) => {
         res.sendFile(__dirname + '/static/' + req.url);
     } else if (req.url.substr(-4) === '.css') {
         res.sendFile(__dirname + '/static/' + req.url);
-    } else if (req.url.substr(-4) === '.png') {
+    } else if (req.url.substr(-4) === '.png' || req.url.substr(-4) === '.jpg') {
         res.sendFile(__dirname + '/static/images/' + req.url);
     } else if (req.url.substr(-5) !== '.html') { // remove '.html' from the end of the url
         res.sendFile(__dirname + '/static/' + req.url + '.html');
