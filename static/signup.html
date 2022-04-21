@@ -56,8 +56,15 @@
         <div>
             <b>Refund policy:</b> We offer a full refund up to 2 weeks before the first class.
         </div>
+        <div>
+            <b>Payment:</b> You can pay through Venmo, Zelle, or Paypal.
+            If you need an invoice, let us know and we'll send you one.
+        </div>
         <div class="mb-3">
             Payments are due 1 week after the registration deadline.
+        </div>
+        <div class="mb-3">
+            Note: Fields denoted with a * are required.
         </div>
 
         <form class="needs-validation" id="form" novalidate>
@@ -108,7 +115,7 @@
                 </div>
                 <div class="col-12 col-md-8">
                     <div class="form-group mb-3">
-                        <label for="school">School *</label>
+                        <label for="school">School Name*</label>
                         <input name="school" type="text" class="form-control" id="school" placeholder="" required>
                         <div class="invalid-feedback">
                             Please enter your school name.
@@ -116,13 +123,7 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <div class="form-check mb-3">
-                    <input name="age-validation" type="checkbox" class="form-check-input" id="age-validation" required>
-                    <label class="form-check-label" for="age-validation">I am confirming I am above the age of 13. *</label>
-                </div>
-            </div>
-            <div>
+            <div class="mb-3">
                 Which classes are you signing up for? *
                 <div class="form-check">
                     <input name="biology" type="checkbox" class="form-check-input" id="biology">
@@ -153,13 +154,35 @@
                     <textarea name="hear-from-where" class="form-control" id="hear-from-where" rows="3"></textarea>
                 </div>
             </div>
-            <div>
-                <p>
-                    Payment: You can pay through Venmo, Zelle, or Paypal.
-                    If you need an invoice, let us know and we'll send you one.
-                </p>
+            <div class="col-12">
+                <p class="mb-0">Age verification: *</p>
+                <div class="form-check">
+                    <input name="age-validation" type="radio" class="form-check-input" id="age-validation-true" required>
+                    <label class="form-check-label" for="age-validation-true">I am 13 or older</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input name="age-validation" type="radio" class="form-check-input" id="age-validation-false" required>
+                    <label class="form-check-label" for="age-validation-false">I am NOT above the age of 13</label>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="parent-name">
+                        <span class="h6 text-warning">If you are younger than 13</span>, please have your parent/guardian type their full name into this text box
+                        to certify that they authorize the collection of information such as their child's name, email address, and discord tag.
+                        Note that we will not share this information with any third parties, and we will only be using it to distribute course material.
+                    </label>
+                    <div class="col-12">
+                        <input name="parent-name" type="text" class="form-control" id="parent-name" placeholder="">
+                    </div>
+                </div>
             </div>
-
+            <div class="mb-3">
+                <div class="form-check">
+                    <input name="privacy-policy" type="checkbox" class="form-check-input" id="privacy-policy" required>
+                    <label class="form-check-label" for="privacy-policy">
+                        By submitting this form, I have read and agreed to the <a class="link-info" href="Privacy-Policy.pdf" target="_blank">Privacy Policy</a>.
+                    </label>
+                </div>
+            </div>
             <button type="submit" id="submission" class="btn btn-primary mb-5">Submit</button>
         </form>
     </div>
